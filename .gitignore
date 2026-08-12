@@ -1,0 +1,42 @@
+# ═══════════════════════════════════════════════════════════
+# Bento Station AIOS — .gitignore (repo PUBLIC)
+# Loại tài liệu nội bộ (AI-guide / cấu trúc) + dữ liệu nhạy cảm
+# ═══════════════════════════════════════════════════════════
+
+# ── Tài liệu nội bộ (chỉ giữ README.md public) ──
+AGENTS.md
+ARCHITECTURE.md
+CODE_MAP.md
+CONFIG_REFERENCE.md
+BENTO_FORGE_INTEGRATION.md
+PROMPT_TEMPLATES.md
+CREDITS.md
+plans/
+
+# ── Bento Forge — tài liệu nội bộ / hệ thống skill AI ──
+Bento Forge/AGENTS.md
+Bento Forge/CODE_MAP.md
+Bento Forge/UPGRADE_GUIDE.md
+Bento Forge/REFACTOR_PLAN.md
+Bento Forge/BATCH_PROCESSING_GUIDE.md
+Bento Forge/.claude/
+
+# ── Dữ liệu cá nhân / cấu hình profile (chứa API key, ảnh) ──
+user_files/
+
+# ── Repo cũ của Bento Forge (đổi tên .git → .git.bak để giữ lịch sử) ──
+Bento Forge/.git.bak/
+.git.bak/
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ── Logs ──
+*.log
