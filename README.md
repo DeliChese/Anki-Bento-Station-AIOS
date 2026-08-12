@@ -47,7 +47,8 @@ Bento Station AIOS/
 └── Bento Forge/             # Xưởng chế tạo thẻ (xem README riêng bên trong)
 ```
 
-Chi tiết từng file xem [`CODE_MAP.md`](CODE_MAP.md); luồng hoạt động xem [`ARCHITECTURE.md`](ARCHITECTURE.md).
+> 📌 Tài liệu phát triển nội bộ (AGENTS.md, CODE_MAP.md, ARCHITECTURE.md, CONFIG_REFERENCE.md, plans/…) **không được publish** trong repo public này.
+> Xem thêm: [`Bento Forge/README.md`](Bento%20Forge/README.md).
 
 ---
 
@@ -55,13 +56,7 @@ Chi tiết từng file xem [`CODE_MAP.md`](CODE_MAP.md); luồng hoạt động 
 
 | File | Nội dung |
 |---|---|
-| [`AGENTS.md`](AGENTS.md) | **Điểm vào cho AI** — đọc đầu tiên khi cần sửa code (tiết kiệm token). |
-| [`CODE_MAP.md`](CODE_MAP.md) | Bản đồ từng file + số dòng. |
-| [`ARCHITECTURE.md`](ARCHITECTURE.md) | Kiến trúc tổng thể, luồng khởi động & render. |
-| [`CONFIG_REFERENCE.md`](CONFIG_REFERENCE.md) | Tham chiếu toàn bộ config key. |
-| [`BENTO_FORGE_INTEGRATION.md`](BENTO_FORGE_INTEGRATION.md) | Cách 2 module nối với nhau. |
-| [`CREDITS.md`](CREDITS.md) | Tri ân & nguồn gốc Onigiri, license. |
-| [`Bento Forge/README.md`](Bento%20Forge/README.md) | Docs Bento Forge + hệ thống skill `.claude/`. |
+| [`Bento Forge/README.md`](Bento%20Forge/README.md) | Docs Bento Forge — Xưởng chế tạo thẻ từ vựng/ngữ pháp. |
 
 ---
 
@@ -76,11 +71,12 @@ Chi tiết từng file xem [`CODE_MAP.md`](CODE_MAP.md); luồng hoạt động 
 
 ## 🧪 Kiểm thử
 
-- **Bento Forge**: 344 test (17 file) — chạy bằng `python -m pytest "Bento Forge/tests" -v`.
-- **Bento Station (root)**: chưa có test tự động; kiểm thử thủ công trên Anki thật.
+- **Bento Forge**: 344 test (17 file) — `python -m pytest "Bento Forge/tests" -v`.
+- **Bento Station (root)**: 35 smoke test (import + runtime call, chạy không cần Anki) — `python -m pytest tests/ -v`.
 
 ---
 
 ## 📄 License & Ghi nhận
 
-Kế thừa & mở rộng **Onigiri Add-on** — xem [`CREDITS.md`](CREDITS.md) (tri ân tác giả gốc + bảng kế thừa + thông tin giấy phép).
+Kế thừa & mở rộng **Onigiri Add-on** (tác giả gốc: Peace). Mã nguồn kế thừa Onigiri giữ nguyên header tri ân.
+Phần Bento Forge phát hành theo **MIT** — xem [`Bento Forge/LICENSE`](Bento%20Forge/LICENSE).
