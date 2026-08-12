@@ -2,12 +2,12 @@
 
 > **Trạm học tập All-In-One trên Anki Desktop** — giao diện hiện đại + Xưởng chế tạo thẻ từ vựng bằng AI.
 
-Bento Station AIOS là một add-on Anki duy nhất, gồm **2 module** nối liền trong cùng runtime:
+Bento Station AIOS gồm **2 add-on** nối liền trong cùng runtime Anki:
 
 | Module | Vai trò |
 |---|---|
-| **Bento Station** (gốc) | Thay thế giao diện mặc định Anki: Deck Browser, Overview, Reviewer, Congratulations. Kế thừa & mở rộng add-on **Onigiri** (xem [`CREDITS.md`](CREDITS.md)). |
-| **Bento Forge** (thư mục con) | Xưởng chế tạo thẻ từ vựng/ngữ pháp **Nhật–Trung–Hàn**: AI trích xuất, TTS, lọc trùng, cache. Nối qua [`bento_forge_bridge.py`](bento_forge_bridge.py) (xem [`BENTO_FORGE_INTEGRATION.md`](BENTO_FORGE_INTEGRATION.md)). |
+| **Bento Station** (add-on chính — repo này) | Thay thế giao diện mặc định Anki: Deck Browser, Overview, Reviewer, Congratulations. Kế thừa & mở rộng add-on **Onigiri** (xem [`CREDITS.md`](CREDITS.md)). |
+| **Bento Forge** (add-on độc lập) | Xưởng chế tạo thẻ từ vựng/ngữ pháp **Nhật–Trung–Hàn**: AI trích xuất, TTS, lọc trùng, cache. Là **add-on Anki riêng** nằm tại `addons21/Bento Forge/`, được Station nối qua [`bento_forge_bridge.py`](bento_forge_bridge.py) (xem [`BENTO_FORGE_INTEGRATION.md`](BENTO_FORGE_INTEGRATION.md)). |
 
 **Version:** `1.0.9-beta` · **Anki:** ≥ 2.1.50 · **Python:** ≥ 3.9 · **Thư mục cài đặt:** `%APPDATA%/Anki2/addons21/Bento Station AIOS`
 
@@ -27,7 +27,7 @@ Bento Station AIOS là một add-on Anki duy nhất, gồm **2 module** nối li
 ## 🏗️ Cấu trúc dự án (tóm tắt)
 
 ```
-Bento Station AIOS/
+Bento Station AIOS/           # Add-on chính (repo này)
 ├── __init__.py              # Entry point — đăng ký toàn bộ gui_hooks
 ├── bento_station_renderer.py# Engine render Deck Browser (EXP, widget, sidebar)
 ├── patcher.py / patching.py # SHIM + Patch registry (version-guard Anki API)
@@ -43,8 +43,9 @@ Bento Station AIOS/
 ├── user_files/              # Ảnh nền, avatar, config, sprites, fonts
 ├── system_files/            # Icons, fonts hệ thống, Coloris, ảnh mặc định
 ├── tools/                   # Script kiểm tra tham chiếu (patcher)
-├── plans/                   # Kế hoạch tính năng
-└── Bento Forge/             # Xưởng chế tạo thẻ (xem README riêng bên trong)
+└── plans/                   # Kế hoạch tính năng
+
+addons21/Bento Forge/         # Add-on ĐỘC LẬP — Xưởng chế tạo thẻ (ngoài repo này)
 ```
 
 > 📌 Tài liệu phát triển nội bộ (AGENTS.md, CODE_MAP.md, ARCHITECTURE.md, CONFIG_REFERENCE.md, plans/…) **không được publish** trong repo public này.

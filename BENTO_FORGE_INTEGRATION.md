@@ -13,7 +13,7 @@ Anki khi thẻ mới được đúc xong.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    BENTO STATION AIOS (1 addon)                      │
+│              BENTO STATION AIOS (add-on chính)                      │
 │                                                                     │
 │  ┌──────────────┐   ┌────────────────────────────────────────────┐  │
 │  │  __init__.py  │   │  Sidebar (bento_station_renderer.py)       │  │
@@ -34,7 +34,7 @@ Anki khi thẻ mới được đúc xong.
 │                                       │ (chỉ 1 chiều — không vòng) │
 │                                       ▼                            │
 │  ┌─────────────────────────────────────────────────────────────┐  │
-│  │  BENTO FORGE  (thư mục con — KHÔNG phải addon riêng)         │  │
+│  │  BENTO FORGE  (add-on Anki ĐỘC LẬP — addons21/Bento Forge/)  │  │
 │  │  __init__.py → AnkiSmartFactory (Xưởng chế biến)              │  │
 │  │  utils/ai_config.json   (API Key / model / cache)             │  │
 │  │  utils/ai_cache/        (cache AI)                            │  │
@@ -168,8 +168,9 @@ bento_forge_bridge.refresh_anki_ui()
   (`open_forge`, `initialize_forge`, ...) — không import ở module load.
 - **Chống sập:** mọi lời gọi Forge đều bọc `try/except`; nếu Forge thiếu hoặc lỗi,
   Bento Station vẫn khởi động bình thường, menu Forge bị ẩn và hiện thông báo thân thiện.
-- **Đảm bảo sys.path:** bridge tự chèn thư mục addon vào `sys.path` trước khi import
-  (Anki cũng tự thêm thư mục addon vào sys.path).
+- **Đảm bảo sys.path:** bridge chèn thư mục `addons21` vào `sys.path` để
+  `importlib.import_module("Bento Forge")` resolve được — dù Forge là add-on độc lập
+  (Anki cũng tự thêm thư mục add-on vào sys.path khi load).
 
 ---
 

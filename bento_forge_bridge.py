@@ -88,6 +88,13 @@ def _discover_forge():
     if root not in sys.path:
         sys.path.insert(0, root)
 
+    # Khi "Bento Forge" là ADD-ON ĐỘC LẬP nằm thẳng trong addons21 (ngang cấp
+    # với Bento Station), cần thêm thư mục addons21 vào sys.path để
+    # `importlib.import_module("Bento Forge")` resolve được tên module.
+    addons_root = os.path.dirname(root)
+    if addons_root not in sys.path:
+        sys.path.insert(0, addons_root)
+
     # Ưu tiên 1: package con "Bento Forge" ngay trong thư mục addon.
     candidates = [_FORGE_PACKAGE]
     # Ưu tiên 2: nếu người dùng cài Forge như addon độc lập khác (dự phòng).
@@ -214,8 +221,9 @@ def _notify_unavailable(error=None):
     msg = (
         "🧩 Bento Forge chưa khả dụng.\n\n"
         "Bridge đã bảo vệ Bento Station không bị lỗi.\n"
-        "Hãy đảm bảo thư mục 'Bento Forge' nằm trong addon "
-        "Bento Station AIOS (đúng tên, có __init__.py)."
+        "Hãy đảm bảo thư mục 'Bento Forge' có __init__.py và nằm một trong hai vị trí:\n"
+        "  • Là add-on độc lập ngay trong thư mục addons21 (khuyến khích), hoặc\n"
+        "  • Là package con bên trong addon Bento Station AIOS."
     )
     if error:
         msg += f"\n\nChi tiết: {error}"

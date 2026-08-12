@@ -3,14 +3,8 @@
 # Loại tài liệu nội bộ (AI-guide / cấu trúc) + dữ liệu nhạy cảm
 # ═══════════════════════════════════════════════════════════
 
-# ── Bento Forge — hệ thống skill AI (nội bộ) ──
-Bento Forge/.claude/
-
 # ── Dữ liệu cá nhân / cấu hình profile (chứa API key, ảnh) ──
 user_files/
-
-# ── Repo cũ của Bento Forge (đổi tên .git → .git.bak để giữ lịch sử) ──
-Bento Forge/.git.bak/
 .git.bak/
 
 # ── Python ──

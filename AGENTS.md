@@ -5,9 +5,9 @@
 
 ## QUY TRÌNH BẮT BUỘC (tiết kiệm token)
 
-1. Xác định **nhiệm vụ thuộc module nào**: Bento Station (gốc) hay Bento Forge (`Bento Forge/`).
+1. Xác định **nhiệm vụ thuộc module nào**: Bento Station (workspace này) hay Bento Forge (add-on riêng).
 2. Tra bảng **Nhiệm vụ → File** bên dưới, đọc đúng file với `offset/limit` (dùng số dòng có sẵn).
-3. Nếu sửa **Bento Forge**: đọc [`Bento Forge/AGENTS.md`](Bento%20Forge/AGENTS.md) → hệ thống skill `.claude/`.
+3. Nếu sửa **Bento Forge**: đó là **add-on độc lập** nằm ngay trong `addons21/Bento Forge/` (ngoài workspace này) — đọc `addons21/Bento Forge/AGENTS.md` → hệ thống skill `.claude/`.
 4. Sửa xong → kiểm tra tính nhất quán (Anki restart để verify UI).
 
 ## Nhiệm vụ → File
@@ -61,4 +61,4 @@
 
 - Bản đồ file chi tiết: [`CODE_MAP.md`](CODE_MAP.md) · Kiến trúc: [`ARCHITECTURE.md`](ARCHITECTURE.md)
 - Config: [`CONFIG_REFERENCE.md`](CONFIG_REFERENCE.md) · Tích hợp Forge: [`BENTO_FORGE_INTEGRATION.md`](BENTO_FORGE_INTEGRATION.md)
-- Bento Forge (skill hệ thống): [`Bento Forge/AGENTS.md`](Bento%20Forge/AGENTS.md)
+- Bento Forge (add-on độc lập): `addons21/Bento Forge/AGENTS.md` — nằm ngoài workspace này, kết nối qua [`bento_forge_bridge.py`](bento_forge_bridge.py).
